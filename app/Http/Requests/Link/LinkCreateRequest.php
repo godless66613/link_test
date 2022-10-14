@@ -12,7 +12,7 @@ class LinkCreateRequest extends FormRequest
         return [
             'link'              => 'required|url',
             'transfer_limit'    => 'nullable|integer',
-            'lifetime'          => 'required|integer',
+            'lifetime'          => 'required|integer|min:1|max:24',
         ];
     }
 
