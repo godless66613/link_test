@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[LinkController::class, 'index'])->name('home');
+Route::post('/create',[LinkController::class, 'create'])->name('create_link');
+Route::get('/show/{token}',[LinkController::class, 'show'])->name('show_link');
